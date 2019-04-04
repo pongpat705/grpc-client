@@ -25,7 +25,7 @@ public class HelloWorldClient {
 
 	@PostConstruct
 	private void init() {
-		ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", 6565).usePlaintext().build();
+		ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("139.162.10.183", 6565).usePlaintext().build();
 
 		helloWorldServiceBlockingStub = HelloWorldServiceGrpc.newBlockingStub(managedChannel);
 	}
