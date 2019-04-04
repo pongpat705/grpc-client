@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-grpc-client
+Implementation-Version: 1
+Built-By: PriorSolution
+Implementation-Vendor-Id: com.maoz.grpc
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-grpc-client
+Created-By: Maven Integration for Eclipse
+
