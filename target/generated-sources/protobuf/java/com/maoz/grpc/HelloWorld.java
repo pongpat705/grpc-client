@@ -35,10 +35,15 @@ public final class HelloWorld {
     java.lang.String[] descriptorData = {
       "\n\020HelloWorld.proto\022\rcom.maoz.grpc\"/\n\006Per" +
       "son\022\022\n\nfirst_name\030\001 \001(\t\022\021\n\tlast_name\030\002 \001" +
-      "(\t\"\033\n\010Greeting\022\017\n\007message\030\001 \001(\t2O\n\021Hello" +
-      "WorldService\022:\n\010sayHello\022\025.com.maoz.grpc" +
-      ".Person\032\027.com.maoz.grpc.GreetingB\002P\001b\006pr" +
-      "oto3"
+      "(\t\"\033\n\010Greeting\022\017\n\007message\030\001 \001(\t2\230\002\n\021Hell" +
+      "oWorldService\022:\n\010sayHello\022\025.com.maoz.grp" +
+      "c.Person\032\027.com.maoz.grpc.Greeting\022A\n\rLot" +
+      "sOfReplies\022\025.com.maoz.grpc.Person\032\027.com." +
+      "maoz.grpc.Greeting0\001\022C\n\017LotsOfGreetings\022" +
+      "\025.com.maoz.grpc.Person\032\027.com.maoz.grpc.G" +
+      "reeting(\001\022?\n\tBidiHello\022\025.com.maoz.grpc.P" +
+      "erson\032\027.com.maoz.grpc.Greeting(\0010\001B\002P\001b\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

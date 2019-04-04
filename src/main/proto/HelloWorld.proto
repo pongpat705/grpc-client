@@ -14,4 +14,11 @@ message Greeting {
 
 service HelloWorldService {
   rpc sayHello (Person) returns (Greeting);
+  
+  rpc LotsOfReplies(Person) returns (stream Greeting);
+  
+  rpc LotsOfGreetings(stream Person) returns (Greeting);
+  
+  rpc BidiHello(stream Person) returns (stream Greeting);
+  
 }

@@ -59,6 +59,102 @@ public final class HelloWorldServiceGrpc {
      return getSayHelloMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.maoz.grpc.Person,
+      com.maoz.grpc.Greeting> getLotsOfRepliesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LotsOfReplies",
+      requestType = com.maoz.grpc.Person.class,
+      responseType = com.maoz.grpc.Greeting.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.maoz.grpc.Person,
+      com.maoz.grpc.Greeting> getLotsOfRepliesMethod() {
+    io.grpc.MethodDescriptor<com.maoz.grpc.Person, com.maoz.grpc.Greeting> getLotsOfRepliesMethod;
+    if ((getLotsOfRepliesMethod = HelloWorldServiceGrpc.getLotsOfRepliesMethod) == null) {
+      synchronized (HelloWorldServiceGrpc.class) {
+        if ((getLotsOfRepliesMethod = HelloWorldServiceGrpc.getLotsOfRepliesMethod) == null) {
+          HelloWorldServiceGrpc.getLotsOfRepliesMethod = getLotsOfRepliesMethod = 
+              io.grpc.MethodDescriptor.<com.maoz.grpc.Person, com.maoz.grpc.Greeting>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "com.maoz.grpc.HelloWorldService", "LotsOfReplies"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.maoz.grpc.Person.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.maoz.grpc.Greeting.getDefaultInstance()))
+                  .setSchemaDescriptor(new HelloWorldServiceMethodDescriptorSupplier("LotsOfReplies"))
+                  .build();
+          }
+        }
+     }
+     return getLotsOfRepliesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.maoz.grpc.Person,
+      com.maoz.grpc.Greeting> getLotsOfGreetingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LotsOfGreetings",
+      requestType = com.maoz.grpc.Person.class,
+      responseType = com.maoz.grpc.Greeting.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.maoz.grpc.Person,
+      com.maoz.grpc.Greeting> getLotsOfGreetingsMethod() {
+    io.grpc.MethodDescriptor<com.maoz.grpc.Person, com.maoz.grpc.Greeting> getLotsOfGreetingsMethod;
+    if ((getLotsOfGreetingsMethod = HelloWorldServiceGrpc.getLotsOfGreetingsMethod) == null) {
+      synchronized (HelloWorldServiceGrpc.class) {
+        if ((getLotsOfGreetingsMethod = HelloWorldServiceGrpc.getLotsOfGreetingsMethod) == null) {
+          HelloWorldServiceGrpc.getLotsOfGreetingsMethod = getLotsOfGreetingsMethod = 
+              io.grpc.MethodDescriptor.<com.maoz.grpc.Person, com.maoz.grpc.Greeting>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "com.maoz.grpc.HelloWorldService", "LotsOfGreetings"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.maoz.grpc.Person.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.maoz.grpc.Greeting.getDefaultInstance()))
+                  .setSchemaDescriptor(new HelloWorldServiceMethodDescriptorSupplier("LotsOfGreetings"))
+                  .build();
+          }
+        }
+     }
+     return getLotsOfGreetingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.maoz.grpc.Person,
+      com.maoz.grpc.Greeting> getBidiHelloMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BidiHello",
+      requestType = com.maoz.grpc.Person.class,
+      responseType = com.maoz.grpc.Greeting.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<com.maoz.grpc.Person,
+      com.maoz.grpc.Greeting> getBidiHelloMethod() {
+    io.grpc.MethodDescriptor<com.maoz.grpc.Person, com.maoz.grpc.Greeting> getBidiHelloMethod;
+    if ((getBidiHelloMethod = HelloWorldServiceGrpc.getBidiHelloMethod) == null) {
+      synchronized (HelloWorldServiceGrpc.class) {
+        if ((getBidiHelloMethod = HelloWorldServiceGrpc.getBidiHelloMethod) == null) {
+          HelloWorldServiceGrpc.getBidiHelloMethod = getBidiHelloMethod = 
+              io.grpc.MethodDescriptor.<com.maoz.grpc.Person, com.maoz.grpc.Greeting>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "com.maoz.grpc.HelloWorldService", "BidiHello"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.maoz.grpc.Person.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.maoz.grpc.Greeting.getDefaultInstance()))
+                  .setSchemaDescriptor(new HelloWorldServiceMethodDescriptorSupplier("BidiHello"))
+                  .build();
+          }
+        }
+     }
+     return getBidiHelloMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -93,6 +189,27 @@ public final class HelloWorldServiceGrpc {
       asyncUnimplementedUnaryCall(getSayHelloMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void lotsOfReplies(com.maoz.grpc.Person request,
+        io.grpc.stub.StreamObserver<com.maoz.grpc.Greeting> responseObserver) {
+      asyncUnimplementedUnaryCall(getLotsOfRepliesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.maoz.grpc.Person> lotsOfGreetings(
+        io.grpc.stub.StreamObserver<com.maoz.grpc.Greeting> responseObserver) {
+      return asyncUnimplementedStreamingCall(getLotsOfGreetingsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.maoz.grpc.Person> bidiHello(
+        io.grpc.stub.StreamObserver<com.maoz.grpc.Greeting> responseObserver) {
+      return asyncUnimplementedStreamingCall(getBidiHelloMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -102,6 +219,27 @@ public final class HelloWorldServiceGrpc {
                 com.maoz.grpc.Person,
                 com.maoz.grpc.Greeting>(
                   this, METHODID_SAY_HELLO)))
+          .addMethod(
+            getLotsOfRepliesMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.maoz.grpc.Person,
+                com.maoz.grpc.Greeting>(
+                  this, METHODID_LOTS_OF_REPLIES)))
+          .addMethod(
+            getLotsOfGreetingsMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                com.maoz.grpc.Person,
+                com.maoz.grpc.Greeting>(
+                  this, METHODID_LOTS_OF_GREETINGS)))
+          .addMethod(
+            getBidiHelloMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                com.maoz.grpc.Person,
+                com.maoz.grpc.Greeting>(
+                  this, METHODID_BIDI_HELLO)))
           .build();
     }
   }
@@ -131,6 +269,30 @@ public final class HelloWorldServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getSayHelloMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void lotsOfReplies(com.maoz.grpc.Person request,
+        io.grpc.stub.StreamObserver<com.maoz.grpc.Greeting> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getLotsOfRepliesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.maoz.grpc.Person> lotsOfGreetings(
+        io.grpc.stub.StreamObserver<com.maoz.grpc.Greeting> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getLotsOfGreetingsMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.maoz.grpc.Person> bidiHello(
+        io.grpc.stub.StreamObserver<com.maoz.grpc.Greeting> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getBidiHelloMethod(), getCallOptions()), responseObserver);
+    }
   }
 
   /**
@@ -156,6 +318,14 @@ public final class HelloWorldServiceGrpc {
     public com.maoz.grpc.Greeting sayHello(com.maoz.grpc.Person request) {
       return blockingUnaryCall(
           getChannel(), getSayHelloMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.maoz.grpc.Greeting> lotsOfReplies(
+        com.maoz.grpc.Person request) {
+      return blockingServerStreamingCall(
+          getChannel(), getLotsOfRepliesMethod(), getCallOptions(), request);
     }
   }
 
@@ -187,6 +357,9 @@ public final class HelloWorldServiceGrpc {
   }
 
   private static final int METHODID_SAY_HELLO = 0;
+  private static final int METHODID_LOTS_OF_REPLIES = 1;
+  private static final int METHODID_LOTS_OF_GREETINGS = 2;
+  private static final int METHODID_BIDI_HELLO = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -209,6 +382,10 @@ public final class HelloWorldServiceGrpc {
           serviceImpl.sayHello((com.maoz.grpc.Person) request,
               (io.grpc.stub.StreamObserver<com.maoz.grpc.Greeting>) responseObserver);
           break;
+        case METHODID_LOTS_OF_REPLIES:
+          serviceImpl.lotsOfReplies((com.maoz.grpc.Person) request,
+              (io.grpc.stub.StreamObserver<com.maoz.grpc.Greeting>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -219,6 +396,12 @@ public final class HelloWorldServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_LOTS_OF_GREETINGS:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.lotsOfGreetings(
+              (io.grpc.stub.StreamObserver<com.maoz.grpc.Greeting>) responseObserver);
+        case METHODID_BIDI_HELLO:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.bidiHello(
+              (io.grpc.stub.StreamObserver<com.maoz.grpc.Greeting>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -271,6 +454,9 @@ public final class HelloWorldServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new HelloWorldServiceFileDescriptorSupplier())
               .addMethod(getSayHelloMethod())
+              .addMethod(getLotsOfRepliesMethod())
+              .addMethod(getLotsOfGreetingsMethod())
+              .addMethod(getBidiHelloMethod())
               .build();
         }
       }

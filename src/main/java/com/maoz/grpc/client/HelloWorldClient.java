@@ -1,5 +1,7 @@
 package com.maoz.grpc.client;
 
+import java.util.Iterator;
+
 import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
@@ -38,5 +40,17 @@ public class HelloWorldClient {
 		LOGGER.info("client received {}", greeting);
 
 		return greeting.getMessage();
+	}
+	
+	public void lotsOfReplies(String firstName, String lastName) {
+		Person person = Person.newBuilder().setFirstName(firstName).setLastName(lastName).build();
+		LOGGER.info("client sending {}", person);
+
+		Iterator<Greeting> greetings = helloWorldServiceBlockingStub.lotsOfReplies(person);
+		while (greetings.hasNext()) {
+			Greeting greeting2 = (Greeting) greetings.next();
+			LOGGER.info("client received {}", greeting2);
+		}
+		
 	}
 }
