@@ -11,10 +11,12 @@ import org.springframework.stereotype.Component;
 import com.maoz.grpc.Greeting;
 import com.maoz.grpc.HelloWorldServiceGrpc;
 import com.maoz.grpc.HelloWorldServiceGrpc.HelloWorldServiceBlockingStub;
+import com.maoz.grpc.HelloWorldServiceGrpc.HelloWorldServiceFutureStub;
 import com.maoz.grpc.Person;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.stub.StreamObserver;
 
 @Component
 public class HelloWorldClient {
@@ -30,6 +32,7 @@ public class HelloWorldClient {
 		ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("139.162.10.183", 6565).usePlaintext().build();
 
 		helloWorldServiceBlockingStub = HelloWorldServiceGrpc.newBlockingStub(managedChannel);
+		
 	}
 
 	public String sayHello(String firstName, String lastName) {
@@ -52,5 +55,10 @@ public class HelloWorldClient {
 			LOGGER.info("client received {}", greeting2);
 		}
 		
+	}
+	
+	public void lotsOfGreetings(String firstName, String lastName) {
+		
+		StreamObserver<Greeting> requestObserver = new 
 	}
 }
