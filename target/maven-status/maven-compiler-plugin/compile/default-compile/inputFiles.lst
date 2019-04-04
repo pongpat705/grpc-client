@@ -1,0 +1,7 @@
+/home/grpc/grpc-client/target/generated-sources/protobuf/java/com/maoz/grpc/PersonOrBuilder.java
+/home/grpc/grpc-client/target/generated-sources/protobuf/java/com/maoz/grpc/Person.java
+/home/grpc/grpc-client/target/generated-sources/protobuf/java/com/maoz/grpc/HelloWorld.java
+/home/grpc/grpc-client/target/generated-sources/protobuf/java/com/maoz/grpc/GreetingOrBuilder.java
+/home/grpc/grpc-client/src/main/java/com/maoz/grpc/client/SpringGrpcClientApplication.java
+/home/grpc/grpc-client/target/generated-sources/protobuf/grpc-java/com/maoz/grpc/HelloWorldServiceGrpc.java
+/home/grpc/grpc-client/target/generated-sources/protobuf/java/com/maoz/grpc/Greeting.java
