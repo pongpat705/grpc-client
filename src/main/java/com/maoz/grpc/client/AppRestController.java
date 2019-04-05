@@ -22,4 +22,27 @@ public class AppRestController {
 		
 		LOGGER.info("response Message {}", greetingMessage);
 	}
+	
+	@GetMapping("/lotsOfReplies")
+	public void lotsOfReplies(@RequestParam String name, @RequestParam String lastName) {
+		
+		helloWorldClient.lotsOfReplies(name, lastName);
+		
+	}
+	
+	@GetMapping("/lotsOfGreetings")
+	public void lotsOfGreetings(@RequestParam String name, @RequestParam String lastName) throws InterruptedException {
+		
+		helloWorldClient.lotsOfGreetings(name, lastName);
+		
+	}
+	
+	@GetMapping("/bidiHello")
+	public void bidiHello(@RequestParam String name, @RequestParam String lastName) throws InterruptedException {
+		
+		helloWorldClient.bidiHello(name, lastName);
+		
+	}
+	
+	
 }
