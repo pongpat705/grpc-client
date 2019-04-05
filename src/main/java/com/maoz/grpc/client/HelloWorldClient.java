@@ -59,6 +59,6 @@ public class HelloWorldClient {
 	
 	public void lotsOfGreetings(String firstName, String lastName) {
 		
-		helloWorldServiceBlockingStub
+//		helloWorldServiceBlockingStub
 	}
 }
